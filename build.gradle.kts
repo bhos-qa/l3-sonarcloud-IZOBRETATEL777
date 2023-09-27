@@ -44,7 +44,7 @@ sonar {
         property("sonar.tests", "src/test/java")
         property("sonar.dynamicAnalysis", "reuseReports")
         property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/tests/JaCoCo/xml/coverage.xml")
-        property("sonar.exclusions", "build/classes/java/main/org/example/Main.class")
+        property("sonar.exclusions", "**/Main.java")
     }
 }
 
