@@ -19,13 +19,9 @@ jobs:
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
-          project-name: ${{ github.repository }}
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-          coverage: 90
-          fail-on-violations: true
-          security-hotspot-fail-on: critical
       - name: Cache Gradle packages
         uses: actions/cache@v3
         with:
