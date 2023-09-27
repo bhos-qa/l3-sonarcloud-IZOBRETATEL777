@@ -36,6 +36,7 @@ sonar {
         property("sonar.organization", "bhos-qa")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.jacoco.reportPaths", "build/reports/tests/JaCoCo/xml")
+        property("sonar.coverage.exclusions", "**/Main.class")
     }
 }
 
