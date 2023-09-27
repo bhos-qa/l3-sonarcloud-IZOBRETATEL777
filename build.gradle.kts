@@ -38,11 +38,13 @@ sonar {
     }
 }
 
-tasks.withType<Test> {
-    finalizedBy("jacocoTestReport")
-}
-
 tasks.withType<JacocoReport> {
+    classDirectories.setFrom(
+            fileTree(
+                    mapOf("dir" to "build/classes/java/main",
+                            "excludes" to listOf("**/Main.class"))
+            )
+    )
     reports {
         xml.required = true
         xml.outputLocation = file("$buildDir/reports/tests/JaCoCo/xml/coverage.xml")
@@ -54,6 +56,7 @@ tasks.withType<JacocoReport> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+    finalizedBy("jacocoTestReport")
     reports {
         junitXml.required = true
         junitXml.outputLocation = file("$buildDir/reports/tests/JUnit/xml")
