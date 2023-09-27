@@ -36,6 +36,14 @@ sonar {
         property("sonar.organization", "bhos-qa")
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.jacoco.reportPaths", "build/reports/tests/JaCoCo/xml")
+        property("sonar.junit.reportPaths", "build/reports/tests/JUnit/xml")
+        property("sonar.java.coveragePlugin", "jacoco")
+        property("sonar.java.binaries", "build/classes/java/main")
+        property("sonar.java.test.binaries", "build/classes/java/test")
+        property("sonar.sources", "src/main/java")
+        property("sonar.tests", "src/test/java")
+        property("sonar.dynamicAnalysis", "reuseReports")
+        property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/tests/JaCoCo/xml/coverage.xml")
         property("sonar.coverage.exclusions", "**/Main.class")
     }
 }
