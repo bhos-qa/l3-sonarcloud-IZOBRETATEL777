@@ -35,7 +35,7 @@ sonar {
         property("sonar.projectKey", "bhos-qa_l3-sonarcloud-IZOBRETATEL777")
         property("sonar.organization", "bhos-qa")
         property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.groovy.jacoco.reportPath", "build/reports/tests/JaCoCo/xml/coverage.xml")
+        property("sonar.jacoco.reportPaths", "build/reports/tests/JaCoCo/xml")
     }
 }
 
